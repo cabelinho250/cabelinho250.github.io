@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Matheus Jácome | Portfólio</title>
+</head>
+<body>
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">Início</a>
+            </li>
+            <li>
+                <a href="#sobre" class="menu-link">Sobre</a>
+            </li>
+            <li>
+                <a href="#projetos" class="menu-link">Projetos</a>
+            </li>
+            <li>
+                <a href="#contatos" class="menu-link">Contato</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main id="inicio" class="cabecalho">
+        <div>
+            <img src="./img/mat.jpg" alt="Foto de Matheus Jácome" class="foto-perfil">
+            <h1>Matheus Jácome</h1>
+            <p class="cabecalho-subtitulo">Estudante de ciência da computação na CESAR School</p>
+        </div>
+    </main>
+
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre Mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">
+                Olá! Meu nome é Matheus Jácome e sou estudante de ciência da computação na CESAR School. Tenho paixão por tecnologia e desenvolvimento de software. Estou sempre buscando aprender novas habilidades e aprimorar meus conhecimentos na área de programação.
+            </p>
+        </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo">Meus Projetos</h2>
+        <div class="projetos-caixa">
+            <div class="projetos-card">
+                <img src="./img/projetoMedCo.jpg" alt="Projeto 1" class="projetos-imagem">
+                <h3 class="info-projetos">Farma.Co</h3>
+                <p class="paragrafo-projetos">Projeto do grupo 13, turma de alunos do 1 período da CESAR School, feito com o intuito de incentivar o descarte de medicamentos</p>
+            </div>
+
+            <div class="projetos-card">
+                <img src="" alt="Projeto 2" class="projetos-imagem">
+                <h3 class="info-projetos">espaço vazio</h3>
+                <p class="paragrafo-projetos">espaço vazio</p>
+            </div>
+
+            <div class="projetos-card">
+                <img src="" alt="Projeto 3" class="projetos-imagem">
+                <h3 class="info-projetos">espaço vazio</h3>
+                <p class="paragrafo-projetos">espaço vazio</p>
+            </div>
+
+        </div>
+    </section>
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulo">Entre em Contato</h2>
+        <form class="formulario-contato" id="formulario" onsubmit="enviarwhats(event)">
+            <div class="nome-form">
+                <input placeholder="Nome" class="campo-form" id="nome">
+            </div>
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="Digite sua Mensagem" rows="5" id="mensagem"></textarea>
+            </div>
+
+            <button type="submit" class="botao-form">Enviar WhatsApp</button>
+        </form>
+    </section>
+    
+    <script>
+    function enviarwhats(event) {
+        event.preventDefault();
+
+        const nome = document.getElementById('nome').value;
+        const mensagem = document.getElementById('mensagem').value;
+        const telefone = '5581997590255';
+
+        const texto = `Olá, meu nome é ${nome}, ${mensagem}`;
+        const msgformatada = encodeURIComponent(texto);
+
+        const url = `https://wa.me/${telefone}?text=${msgformatada}`;
+
+        window.open(url, '_blank');
+    }
+    </script>
+</body>
+</html>
